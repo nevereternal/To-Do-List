@@ -17,9 +17,8 @@ form.addEventListener('submit', function addTodo(e){
     listItem.appendChild(linkDel);
     listItem.appendChild(document.createTextNode(todoInput.value));
     todoList.appendChild(listItem);
-    if (todoInput.value){
-        clearBtn.classList.add('show-btn')
-    }
+    clearBtn.classList.add('show-btn')
+    
     SetToLocalStorage(todoInput.value);
     todoInput.value = '';
     e.preventDefault();
@@ -41,9 +40,7 @@ document.addEventListener("DOMContentLoaded", function getFromLocalStorage(){
         listItem.appendChild(linkDel);
         listItem.appendChild(document.createTextNode(todo));
         todoList.appendChild(listItem);
-        if (todoInput.value){
-            clearBtn.classList.add('show-btn')
-        }
+        clearBtn.classList.add('show-btn')
     })
 })
 
