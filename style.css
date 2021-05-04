@@ -1,0 +1,123 @@
+body {
+  height: 100%;
+  background: #dceaeb;
+  font-family: "Cabin", sans-serif;
+}
+
+.container {
+  width: 800px;
+  height: auto;
+  display: block;
+  background-color: #fff;
+  opacity: 70%;
+  margin: auto;
+  margin-top: 100px;
+  padding-top: 60px;
+  padding-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 15px rgba(36, 25, 105, 0.25);
+}
+
+h1 {
+  text-align: center;
+  color: #2d3a4c;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  width: 700px;
+  background-color: #dceaeb;
+  margin-top: 30px;
+  margin-left: 40px;
+  border-radius: 20px;
+}
+
+input::placeholder {
+  color: #2d3a4c;
+  opacity: 70%;
+}
+
+input[type="text"] {
+  outline: 0;
+  border: none;
+  font-size: 18px;
+  background: #dceaeb;
+  color: #63666d;
+  margin-left: 60px;
+}
+
+.btn {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2d3a4c;
+  background-color: #dceaeb;
+  border-radius: 18px;
+  outline: 0;
+  border: none;
+  height: 40px;
+  cursor: pointer;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-left: 360px;
+}
+
+.btn:hover {
+  background-color: #2d3a4c;
+  color: #fff;
+  transition: 1s;
+}
+
+.todolist {
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 40px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  border-bottom: 1px solid #c6c9d1;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  font-size: 20px;
+  color: #2d3a4c;
+  word-wrap: break-word;
+}
+
+a {
+  float: right;
+  text-align: right;
+  color: #2d3a4c;
+  font-size: 22px;
+  cursor: pointer;
+  padding-left: 10px;
+}
+
+.clear {
+  display: block;
+  margin-left: 350px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #2d3a4c;
+  background-color: #fff;
+  border-radius: 18px;
+  outline: 0;
+  border: none;
+  width: 120px;
+  height: 45px;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.clear:hover {
+  color: #fff;
+  background-color: #2d3a4c;
+  transition: 1s;
+}
+.show-btn {
+  visibility: visible;
+}
