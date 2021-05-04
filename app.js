@@ -9,7 +9,7 @@ todos = JSON.parse(localStorage.getItem('todos')) || [];
 // Add ToDo
 form.addEventListener('submit', function addTodo(e){
     if(todoInput.value === ''){
-        alert('Add a to-d0!')
+        alert('Add a to-do!')
     } else {
     const listItem = document.createElement('li');
     const linkDel = document.createElement('a');
