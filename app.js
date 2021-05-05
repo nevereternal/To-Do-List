@@ -11,13 +11,16 @@ form.addEventListener('submit', function addTodo(e){
     if(todoInput.value === ''){
         alert('Add a to-do!')
     } else {
-    const listItem = document.createElement('li');
+  const listItem = document.createElement('li');
     const linkDel = document.createElement('a');
     linkDel.innerHTML = `<i class="far fa-trash-alt"></i>`;
-    listItem.appendChild(linkDel);
-    listItem.appendChild(document.createTextNode(todoInput.value));
     todoList.appendChild(listItem);
-    clearBtn.classList.add('show-btn')
+    linkDel.addEventListener('click', function (e){
+        e.target.parentElement.parentElement.remove();
+        deleteFromLocalStorage( e.target.parentElement.parentElement)
+    });
+    listItem.appendChild(document.createTextNode(todoInput.value));
+    clearBtn.classList.add('show-btn');
     
     SetToLocalStorage(todoInput.value);
     todoInput.value = '';
@@ -37,6 +40,10 @@ document.addEventListener("DOMContentLoaded", function getFromLocalStorage(){
         const listItem = document.createElement('li');
         const linkDel = document.createElement('a');
         linkDel.innerHTML = `<i class="far fa-trash-alt"></i>`;
+       linkDel.addEventListener('click', function (e){
+            e.target.parentElement.parentElement.remove();
+            deleteFromLocalStorage(e.target.parentElement.parentElement)
+        });
         listItem.appendChild(linkDel);
         listItem.appendChild(document.createTextNode(todo));
         todoList.appendChild(listItem);
@@ -46,11 +53,6 @@ document.addEventListener("DOMContentLoaded", function getFromLocalStorage(){
 
 
 // Delete todo
-
-todoList.addEventListener('click', function(e){
-    e.target.parentElement.parentElement.remove();
-    deleteFromLocalStorage(e.target.parentElement.parentElement);
-})
 
 function deleteFromLocalStorage(someval){
     todos.forEach(function(todo, index){
@@ -65,5 +67,7 @@ function deleteFromLocalStorage(someval){
 
 clearBtn.addEventListener('click', function (e){
     todoList.innerHTML = '';
-    localStorage.clear()
+    localStorage.clear();
+    todos = [];
+    clearBtn.classList.remove('show-btn')
 })
