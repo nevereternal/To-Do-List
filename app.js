@@ -23,9 +23,6 @@ form.addEventListener('submit', function addTodo(e){
     listItem.addEventListener('click', function(){
         listItem.classList.toggle('completed');
     });
-    if(todo && todo.completed) {
-        listItem.classList.add('completed');
-    };
    
      
     clearBtn.classList.add('show-btn');
@@ -58,9 +55,6 @@ document.addEventListener("DOMContentLoaded", function getFromLocalStorage(){
         listItem.addEventListener('click', function(){
             listItem.classList.toggle('completed');
         });
-        if(todo && todo.completed) {
-           listItem.classList.add('completed');
-        };
        
         clearBtn.classList.add('show-btn')
     })
