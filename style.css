@@ -89,6 +89,10 @@ li {
   word-wrap: break-word;
 }
 
+.completed {
+  text-decoration: line-through;
+}
+
 a {
   float: right;
   text-align: right;
