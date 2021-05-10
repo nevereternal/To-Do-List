@@ -15,11 +15,19 @@ form.addEventListener('submit', function addTodo(e){
     const linkDel = document.createElement('a');
     linkDel.innerHTML = `<i class="far fa-trash-alt"></i>`;
     todoList.appendChild(listItem);
+    listItem.appendChild(document.createTextNode(todoInput.value));
     linkDel.addEventListener('click', function (e){
         e.target.parentElement.parentElement.remove();
         deleteFromLocalStorage( e.target.parentElement.parentElement)
     });
-    listItem.appendChild(document.createTextNode(todoInput.value));
+    listItem.addEventListener('click', function(){
+        listItem.classList.toggle('completed');
+    });
+    if(todo && todo.completed) {
+        listItem.classList.add('completed');
+    };
+   
+     
     clearBtn.classList.add('show-btn');
     
     SetToLocalStorage(todoInput.value);
@@ -40,13 +48,20 @@ document.addEventListener("DOMContentLoaded", function getFromLocalStorage(){
         const listItem = document.createElement('li');
         const linkDel = document.createElement('a');
         linkDel.innerHTML = `<i class="far fa-trash-alt"></i>`;
-       linkDel.addEventListener('click', function (e){
-            e.target.parentElement.parentElement.remove();
-            deleteFromLocalStorage(e.target.parentElement.parentElement)
-        });
         listItem.appendChild(linkDel);
         listItem.appendChild(document.createTextNode(todo));
         todoList.appendChild(listItem);
+        linkDel.addEventListener('click', function (e){
+            e.target.parentElement.parentElement.remove();
+            deleteFromLocalStorage(e.target.parentElement.parentElement)
+        });
+        listItem.addEventListener('click', function(){
+            listItem.classList.toggle('completed');
+        });
+        if(todo && todo.completed) {
+           listItem.classList.add('completed');
+        };
+       
         clearBtn.classList.add('show-btn')
     })
 })
