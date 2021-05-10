@@ -40,7 +40,7 @@ function SetToLocalStorage(todo){
     localStorage.setItem('todos', JSON.stringify(todos));
     }
 
-document.addEventListener("DOMContentLoaded", function getFromLocalStorage(){
+document.addEventListener("DOMContentLoaded", function(){
     todos.forEach(function(todo){
         const listItem = document.createElement('li');
         const linkDel = document.createElement('a');
